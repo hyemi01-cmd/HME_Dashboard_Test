@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>차시학습 독려 대상 현황</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f5f4f0;color:#2c2c2a;padding:24px;line-height:1.5}
+.wrap{max-width:1200px;margin:0 auto}
+.header{background:#fff;border:1px solid #e6e4dd;border-radius:10px;padding:18px 22px;margin-bottom:16px}
+.header h1{font-size:20px;font-weight:600;color:#2c2c2a}
+.header .sub{font-size:13px;color:#6b6a64;margin-top:4px}
+.section-label{font-size:13px;font-weight:600;color:#6b6a64;margin:0 0 8px 2px}
+.card{background:#fff;border:1px solid #e6e4dd;border-radius:10px}
+.donut-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px}
+.donut-card{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px}
+.donut-card.dark{background:#444441;border-color:#444441;color:#fff}
+.dg-label{font-size:14px;font-weight:600;margin-bottom:8px}
+.donut-card.dark .dg-label{color:#fff;opacity:.85}
+.donut{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.donut-hole{width:58px;height:58px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600}
+.donut-hole.dark-hole{background:#444441;color:#fff}
+.dg-sub{font-size:12px;color:#6b6a64;margin-top:8px}
+.donut-card.dark .dg-sub{color:#fff;opacity:.7}
+.dg-delta{font-size:11px;color:#888780;margin-top:2px}
+.donut-card.dark .dg-delta{color:rgba(255,255,255,.7)}
+.dg-cap{font-size:11px;color:#888780;margin:0 0 10px 2px}
+.dg-cap .fade-key{color:#b4b2a9}
+.chart-box{padding:18px;margin-bottom:20px}
+.legend{display:flex;gap:16px;font-size:12px;color:#6b6a64;margin-bottom:10px;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:5px}
+.legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
+.chart-canvas-wrap{position:relative;width:100%;height:300px}
+.table-box{padding:16px}
+.controls{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.controls input,.controls select{height:34px;border:1px solid #d3d1c7;border-radius:8px;padding:0 12px;font-size:13px;font-family:inherit;background:#fff}
+.controls input{flex:1;min-width:180px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{background:#f1efe8;padding:9px 10px;text-align:left;font-weight:600;color:#5f5e5a;border-bottom:1px solid #e6e4dd;cursor:pointer;user-select:none;white-space:nowrap}
+thead th.center{text-align:center}thead th.right{text-align:right}
+tbody td{padding:8px 10px;border-bottom:1px solid #f0eee7;vertical-align:middle}
+tbody td.center{text-align:center}tbody td.right{text-align:right;font-weight:600}
+.team-cell{font-weight:600;vertical-align:top}
+.part-cell{vertical-align:top}
+.teacher-cell{font-weight:600}
+.grade-badge{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:600}
+.bar{display:inline-block;width:70px;height:7px;background:#f1efe8;border-radius:4px;overflow:hidden;vertical-align:middle;margin-right:7px}
+.bar > i{display:block;height:100%}
+.empty{padding:20px;text-align:center;color:#999;font-size:13px}
+.count-info{font-size:12px;color:#6b6a64;margin-bottom:8px}
+@media print{body{background:#fff}.controls{display:none}}
+</style></head>
+<body><div class="wrap">
+
+<div class="header">
+<h1>수학경시 대비 AI맞춤학습 — 차시학습 독려 대상 현황</h1>
+<div class="sub">기준일 2026-06-11 · 진행률 70% 미만 학습생 · 날짜별 목표차시 100% 기준 (6/11 목표 8차시) · 반영기간 5/18~6/12</div>
+</div>
+
+<div class="section-label">① 학년별 독려 대상 요약</div>
+<div class="dg-cap">진한 색 = 당일(6/11) · <span class="fade-key">흐린 띠 = 전일(6/10) 대비 감소분</span></div>
+<div class="donut-grid"><div class="card donut-card dark">
+<div class="dg-label">전체</div>
+<div class="donut" style="background:conic-gradient(#fff 0 11.1%,rgba(255,255,255,.45) 11.1% 11.8%,rgba(255,255,255,.22) 11.8% 100%)"><div class="donut-hole dark-hole">11.1%</div></div>
+<div class="dg-sub">61 / 550명</div><div class="dg-delta">전일 65 · <span style="color:#9FE1CB;font-weight:600">▼4</span></div></div><div class="card donut-card">
+<div class="dg-label" style="color:#3C3489">초3</div>
+<div class="donut" style="background:conic-gradient(#7F77DD 0 13.1%,#CECBF6 13.1% 13.8%,#EEEDFE 13.8% 100%)"><div class="donut-hole" style="color:#3C3489">13.1%</div></div>
+<div class="dg-sub">19 / 145명</div><div class="dg-delta">전일 20 · <span style="color:#1D9E75;font-weight:600">▼1</span></div></div><div class="card donut-card">
+<div class="dg-label" style="color:#0F6E56">초4</div>
+<div class="donut" style="background:conic-gradient(#1D9E75 0 5.4%,#9FE1CB 5.4% 5.4%,#E1F5EE 5.4% 100%)"><div class="donut-hole" style="color:#0F6E56">5.4%</div></div>
+<div class="dg-sub">8 / 149명</div><div class="dg-delta">전일 8 · <span style="color:#888780;font-weight:600">±0</span></div></div><div class="card donut-card">
+<div class="dg-label" style="color:#854F0B">초5</div>
+<div class="donut" style="background:conic-gradient(#BA7517 0 15.9%,#FAC775 15.9% 16.4%,#FAEEDA 16.4% 100%)"><div class="donut-hole" style="color:#854F0B">15.9%</div></div>
+<div class="dg-sub">23 / 145명</div><div class="dg-delta">전일 24 · <span style="color:#1D9E75;font-weight:600">▼1</span></div></div><div class="card donut-card">
+<div class="dg-label" style="color:#993556">초6</div>
+<div class="donut" style="background:conic-gradient(#D4537E 0 9.9%,#F4C0D1 9.9% 11.7%,#FBEAF0 11.7% 100%)"><div class="donut-hole" style="color:#993556">9.9%</div></div>
+<div class="dg-sub">11 / 111명</div><div class="dg-delta">전일 13 · <span style="color:#1D9E75;font-weight:600">▼2</span></div></div></div>
+
+<div class="section-label">② 일별 독려 대상 추이 (5/18~6/12)</div>
+<div class="card chart-box">
+<div class="legend">
+<span><i style="background:#7F77DD"></i>초3</span><span><i style="background:#1D9E75"></i>초4</span>
+<span><i style="background:#BA7517"></i>초5</span><span><i style="background:#D4537E"></i>초6</span>
+</div>
+<div class="chart-canvas-wrap"><canvas id="trendChart" role="img" aria-label="5/18부터 6/12까지 학년별 일별 독려 대상 스택 막대 차트"></canvas></div>
+</div>
+
+<div class="section-label">③ 독려 대상 명단 — 팀 &gt; 파트 &gt; 교사</div>
+<div class="card table-box">
+<div class="controls">
+<input id="search" type="text" placeholder="이름·아이디·교사·팀 검색…">
+<select id="gradeFilter"><option value="">전체 학년</option><option>초3</option><option>초4</option><option>초5</option><option>초6</option></select>
+<select id="sortSel"><option value="default">팀·파트·교사순</option><option value="pct">진행률 낮은순</option><option value="pcthi">진행률 높은순</option></select>
+</div>
+<div class="count-info" id="countInfo"></div>
+<table><thead><tr>
+<th>팀</th><th>파트</th><th>교사</th><th>학년</th><th>학습생</th><th>아이디</th><th class="center">완료차시</th><th class="right">진행률</th>
+</tr></thead><tbody id="tbody"></tbody></table>
+</div>
+
+</div>
+<script>
+const ROWS=[{"name": "장*우", "id": "0315***", "teacher": "안현주", "team": "관리1팀", "part": "관리94", "diag_score": 72, "diag_date": "2026-05-14", "n_done": 3, "pct": 37.5, "grade": "초4"}, {"name": "이*우", "id": "sunwoo0***", "teacher": "이은복", "team": "관리1팀", "part": "관리94", "diag_score": 32, "diag_date": "2026-05-08", "n_done": 5, "pct": 62.5, "grade": "초4"}, {"name": "변*준", "id": "j150***", "teacher": "송영남", "team": "관리2팀", "part": "관리47", "diag_score": 52, "diag_date": "2026-05-09", "n_done": 5, "pct": 62.5, "grade": "초5"}, {"name": "이*호", "id": "jiholov***", "teacher": "김은경2", "team": "관리3팀", "part": "관리32", "diag_score": 60, "diag_date": "2026-05-09", "n_done": 4, "pct": 50.0, "grade": "초4"}, {"name": "서*준", "id": "skyboy0***", "teacher": "김은경2", "team": "관리3팀", "part": "관리32", "diag_score": 60, "diag_date": "2026-05-09", "n_done": 4, "pct": 50.0, "grade": "초4"}, {"name": "박*민", "id": "jm160***", "teacher": "송화영2", "team": "관리3팀", "part": "관리32", "diag_score": 68, "diag_date": "2026-05-11", "n_done": 3, "pct": 37.5, "grade": "초4"}, {"name": "성*율", "id": "sy5***", "teacher": "이인숙2", "team": "관리3팀", "part": "관리32", "diag_score": 40, "diag_date": "2026-05-11", "n_done": 3, "pct": 37.5, "grade": "초4"}, {"name": "최*원", "id": "jw140***", "teacher": "김혜정3", "team": "관리4팀", "part": "관리21", "diag_score": 64, "diag_date": "2026-05-22", "n_done": 1, "pct": 12.5, "grade": "초6"}, {"name": "홍*재", "id": "aji***", "teacher": "김향숙", "team": "관리7팀", "part": "관리58", "diag_score": 64, "diag_date": "2026-05-11", "n_done": 2, "pct": 25.0, "grade": "초6"}, {"name": "정*인", "id": "ilad0***", "teacher": "김향숙", "team": "관리7팀", "part": "관리58", "diag_score": 8, "diag_date": "2026-05-11", "n_done": 3, "pct": 37.5, "grade": "초6"}, {"name": "정*영", "id": "wisl0***", "teacher": "임혜연", "team": "관리7팀", "part": "관리58", "diag_score": 60, "diag_date": "2026-05-13", "n_done": 3, "pct": 37.5, "grade": "초6"}, {"name": "안*현", "id": "sudo1***", "teacher": "민명희", "team": "관리7팀", "part": "관리75", "diag_score": 80, "diag_date": "2026-05-09", "n_done": 2, "pct": 25.0, "grade": "초3"}, {"name": "서*서", "id": "eve***", "teacher": "정선영4", "team": "관리7팀", "part": "관리75", "diag_score": 36, "diag_date": "2026-05-15", "n_done": 4, "pct": 50.0, "grade": "초3"}, {"name": "원*희", "id": "wdr0***", "teacher": "정선영4", "team": "관리7팀", "part": "관리75", "diag_score": 64, "diag_date": "2026-05-15", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "배*하", "id": "yuha***", "teacher": "조애연", "team": "관리7팀", "part": "관리75", "diag_score": 80, "diag_date": "2026-05-06", "n_done": 2, "pct": 25.0, "grade": "초3"}, {"name": "봉*민", "id": "Danielb***", "teacher": "조애연", "team": "관리7팀", "part": "관리75", "diag_score": 56, "diag_date": "2026-05-18", "n_done": 4, "pct": 50.0, "grade": "초3"}, {"name": "박*완", "id": "toyflo***", "teacher": "조애연", "team": "관리7팀", "part": "관리75", "diag_score": 64, "diag_date": "2026-05-07", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "김*정", "id": "superlup***", "teacher": "송영은", "team": "관리7팀", "part": "관리83", "diag_score": 40, "diag_date": "2026-05-11", "n_done": 4, "pct": 50.0, "grade": "초5"}, {"name": "강*재", "id": "rachel05***", "teacher": "송영은", "team": "관리7팀", "part": "관리83", "diag_score": 60, "diag_date": "2026-05-08", "n_done": 5, "pct": 62.5, "grade": "초5"}, {"name": "박*윤", "id": "sap01***", "teacher": "김복희", "team": "관리8팀", "part": "관리46", "diag_score": 60, "diag_date": "2026-05-08", "n_done": 4, "pct": 50.0, "grade": "초5"}, {"name": "백*헌", "id": "tir***", "teacher": "송경실", "team": "관리8팀", "part": "관리46", "diag_score": 44, "diag_date": "2026-05-09", "n_done": 1, "pct": 12.5, "grade": "초5"}, {"name": "정*인", "id": "wlss***", "teacher": "송경실", "team": "관리8팀", "part": "관리46", "diag_score": 72, "diag_date": "2026-05-09", "n_done": 5, "pct": 62.5, "grade": "초5"}, {"name": "정*훈", "id": "jayden0***", "teacher": "오유진", "team": "관리8팀", "part": "관리55", "diag_score": 76, "diag_date": "2026-05-09", "n_done": 4, "pct": 50.0, "grade": "초6"}, {"name": "류*민", "id": "sha***", "teacher": "권은정2", "team": "관리8팀", "part": "관리61", "diag_score": 84, "diag_date": "2026-05-09", "n_done": 3, "pct": 37.5, "grade": "초4"}, {"name": "이*은", "id": "ce1***", "teacher": "안지선", "team": "관리9팀", "part": "관리6", "diag_score": 64, "diag_date": "2026-05-09", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "하*진", "id": "daon171***", "teacher": "안지선", "team": "관리9팀", "part": "관리6", "diag_score": 76, "diag_date": "2026-05-09", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "김*웅", "id": "kcw1***", "teacher": "안지선", "team": "관리9팀", "part": "관리6", "diag_score": 60, "diag_date": "2026-05-09", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "선*진", "id": "woojink***", "teacher": "김경민2", "team": "관리9팀", "part": "관리59", "diag_score": 84, "diag_date": "2026-05-11", "n_done": 2, "pct": 25.0, "grade": "초6"}, {"name": "이*현", "id": "emosa***", "teacher": "김경민2", "team": "관리9팀", "part": "관리59", "diag_score": 72, "diag_date": "2026-05-12", "n_done": 3, "pct": 37.5, "grade": "초6"}, {"name": "소*진", "id": "yujin1***", "teacher": "김경민2", "team": "관리9팀", "part": "관리59", "diag_score": 12, "diag_date": "2026-05-13", "n_done": 3, "pct": 37.5, "grade": "초6"}, {"name": "이*원", "id": "bomu***", "teacher": "김도희2", "team": "관리9팀", "part": "관리71", "diag_score": 24, "diag_date": "2026-05-11", "n_done": 3, "pct": 37.5, "grade": "초6"}, {"name": "이*유", "id": "sun140***", "teacher": "박희원2", "team": "관리9팀", "part": "관리71", "diag_score": 64, "diag_date": "2026-05-09", "n_done": 3, "pct": 37.5, "grade": "초6"}, {"name": "장*교", "id": "jjs7***", "teacher": "서선정", "team": "관리10팀", "part": "관리62", "diag_score": 48, "diag_date": "2026-05-09", "n_done": 2, "pct": 25.0, "grade": "초5"}, {"name": "오*진", "id": "bumjin9***", "teacher": "서선정", "team": "관리10팀", "part": "관리62", "diag_score": 68, "diag_date": "2026-05-09", "n_done": 3, "pct": 37.5, "grade": "초5"}, {"name": "황*나", "id": "YENA150***", "teacher": "서선정", "team": "관리10팀", "part": "관리62", "diag_score": 64, "diag_date": "2026-05-09", "n_done": 4, "pct": 50.0, "grade": "초5"}, {"name": "김*빈", "id": "bin150***", "teacher": "서선정", "team": "관리10팀", "part": "관리62", "diag_score": 68, "diag_date": "2026-05-09", "n_done": 4, "pct": 50.0, "grade": "초5"}, {"name": "홍*희", "id": "rahee151***", "teacher": "서선정", "team": "관리10팀", "part": "관리62", "diag_score": 64, "diag_date": "2026-05-09", "n_done": 4, "pct": 50.0, "grade": "초5"}, {"name": "박*혜", "id": "muse0***", "teacher": "김현주5", "team": "관리11팀", "part": "관리65", "diag_score": 76, "diag_date": "2026-05-11", "n_done": 3, "pct": 37.5, "grade": "초5"}, {"name": "홍*웅", "id": "yoymh***", "teacher": "김현주5", "team": "관리11팀", "part": "관리65", "diag_score": 64, "diag_date": "2026-05-15", "n_done": 4, "pct": 50.0, "grade": "초5"}, {"name": "김*준", "id": "kdj1***", "teacher": "김현주5", "team": "관리11팀", "part": "관리65", "diag_score": 40, "diag_date": "2026-05-09", "n_done": 5, "pct": 62.5, "grade": "초5"}, {"name": "김*준", "id": "kimmj0***", "teacher": "김현주5", "team": "관리11팀", "part": "관리65", "diag_score": 24, "diag_date": "2026-05-14", "n_done": 5, "pct": 62.5, "grade": "초5"}, {"name": "김*연", "id": "doy***", "teacher": "장진선", "team": "관리12팀", "part": "관리35", "diag_score": 72, "diag_date": "2026-05-21", "n_done": 4, "pct": 50.0, "grade": "초4"}, {"name": "이*윤", "id": "mandy7***", "teacher": "심해수", "team": "관리12팀", "part": "관리48", "diag_score": 40, "diag_date": "2026-05-15", "n_done": 2, "pct": 25.0, "grade": "초6"}, {"name": "이*범", "id": "evan170***", "teacher": "최주원", "team": "관리12팀", "part": "관리53", "diag_score": 60, "diag_date": "2026-05-09", "n_done": 3, "pct": 37.5, "grade": "초3"}, {"name": "최*유", "id": "wldb0***", "teacher": "최주원", "team": "관리12팀", "part": "관리53", "diag_score": 72, "diag_date": "2026-05-09", "n_done": 3, "pct": 37.5, "grade": "초3"}, {"name": "손*윤", "id": "ddoru***", "teacher": "최주원", "team": "관리12팀", "part": "관리53", "diag_score": 52, "diag_date": "2026-05-09", "n_done": 4, "pct": 50.0, "grade": "초3"}, {"name": "김*솔", "id": "kimjae***", "teacher": "최주원", "team": "관리12팀", "part": "관리53", "diag_score": 72, "diag_date": "2026-05-09", "n_done": 4, "pct": 50.0, "grade": "초3"}, {"name": "임*진", "id": "yeoj***", "teacher": "최주원", "team": "관리12팀", "part": "관리53", "diag_score": 76, "diag_date": "2026-05-11", "n_done": 4, "pct": 50.0, "grade": "초3"}, {"name": "이*원", "id": "chwo***", "teacher": "최주원", "team": "관리12팀", "part": "관리53", "diag_score": 48, "diag_date": "2026-05-09", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "김*현", "id": "junhyun***", "teacher": "최주원", "team": "관리12팀", "part": "관리53", "diag_score": 56, "diag_date": "2026-05-09", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "유*민", "id": "min171***", "teacher": "최주원", "team": "관리12팀", "part": "관리53", "diag_score": 60, "diag_date": "2026-05-11", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "송*원", "id": "sjw0***", "teacher": "김지희", "team": "관리12팀", "part": "관리66", "diag_score": 68, "diag_date": "2026-05-11", "n_done": 2, "pct": 25.0, "grade": "초5"}, {"name": "정*후", "id": "jihoo***", "teacher": "김지희", "team": "관리12팀", "part": "관리66", "diag_score": 88, "diag_date": "2026-05-11", "n_done": 3, "pct": 37.5, "grade": "초5"}, {"name": "전*우", "id": "a36637***", "teacher": "이명진", "team": "관리12팀", "part": "관리66", "diag_score": 48, "diag_date": "2026-05-12", "n_done": 2, "pct": 25.0, "grade": "초5"}, {"name": "최*율", "id": "CHLWLDBF2***", "teacher": "이명진", "team": "관리12팀", "part": "관리66", "diag_score": 72, "diag_date": "2026-05-14", "n_done": 5, "pct": 62.5, "grade": "초5"}, {"name": "박*현", "id": "Sehyo***", "teacher": "이현민", "team": "관리12팀", "part": "관리80", "diag_score": 52, "diag_date": "2026-04-30", "n_done": 3, "pct": 37.5, "grade": "초5"}, {"name": "최*윤", "id": "wldb1***", "teacher": "박영주3", "team": "관리14팀", "part": "관리77", "diag_score": 60, "diag_date": "2026-05-08", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "이*안", "id": "leejian0***", "teacher": "서광희", "team": "관리14팀", "part": "관리77", "diag_score": 68, "diag_date": "2026-05-09", "n_done": 5, "pct": 62.5, "grade": "초3"}, {"name": "배*하", "id": "Melody2***", "teacher": "민진", "team": "관리14팀", "part": "관리78", "diag_score": 60, "diag_date": "2026-05-12", "n_done": 4, "pct": 50.0, "grade": "초5"}, {"name": "박*성", "id": "minsung0***", "teacher": "민진", "team": "관리14팀", "part": "관리78", "diag_score": 48, "diag_date": "2026-05-07", "n_done": 4, "pct": 50.0, "grade": "초5"}, {"name": "정*주", "id": "moan***", "teacher": "민진", "team": "관리14팀", "part": "관리78", "diag_score": 72, "diag_date": "2026-05-13", "n_done": 5, "pct": 62.5, "grade": "초5"}];
+const CD={"labels": ["5/18", "5/19", "5/20", "5/21", "5/22", "5/23", "5/24", "5/25", "5/26", "5/27", "5/28", "5/29", "5/30", "5/31", "6/1", "6/2", "6/3", "6/4", "6/5", "6/6", "6/7", "6/8", "6/9", "6/10", "6/11", "6/12"], "g3": [67, 49, 62, 49, 35, 27, 22, 39, 35, 53, 46, 33, 26, 25, 32, 32, 29, 29, 27, 24, 22, 22, 21, 20, 19, null], "g4": [69, 50, 60, 52, 32, 25, 21, 35, 29, 39, 31, 26, 20, 15, 24, 24, 18, 18, 18, 15, 12, 12, 9, 8, 8, null], "g5": [81, 73, 93, 82, 65, 60, 51, 58, 46, 63, 59, 51, 46, 41, 47, 47, 39, 39, 35, 30, 28, 26, 25, 24, 23, null], "g6": [58, 46, 58, 56, 47, 42, 38, 44, 42, 54, 50, 42, 40, 36, 38, 38, 34, 34, 33, 26, 21, 21, 17, 13, 11, null]};
+const GC={'초3':['#7F77DD','#EEEDFE','#3C3489','#F6F5FE'],'초4':['#1D9E75','#E1F5EE','#0F6E56','#EFFAF5'],'초5':['#BA7517','#FAEEDA','#854F0B','#FDF6EA'],'초6':['#D4537E','#FBEAF0','#993556','#FDF1F5']};
+function teamnum(t){const m=String(t).match(/(\d+)/);return m?+m[1]:999;}
+function pctColor(p){return p<=25?'#A32D2D':(p<=50?'#854F0B':'#5F5E5A');}
+
+function render(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  const gf=document.getElementById('gradeFilter').value;
+  const sort=document.getElementById('sortSel').value;
+  let data=ROWS.filter(r=>{
+    if(gf&&r.grade!==gf)return false;
+    if(q){const hay=(r.name+r.id+r.teacher+r.team+r.part).toLowerCase();if(!hay.includes(q))return false;}
+    return true;
+  });
+  if(sort==='pct')data=[...data].sort((a,b)=>a.n_done-b.n_done);
+  else if(sort==='pcthi')data=[...data].sort((a,b)=>b.n_done-a.n_done);
+  else data=[...data].sort((a,b)=>teamnum(a.team)-teamnum(b.team)||teamnum(a.part)-teamnum(b.part)||a.teacher.localeCompare(b.teacher)||a.n_done-b.n_done);
+
+  const tb=document.getElementById('tbody');tb.innerHTML='';
+  document.getElementById('countInfo').textContent='총 '+data.length+'명';
+  if(!data.length){tb.innerHTML='<tr><td colspan="8" class="empty">조건에 맞는 학습생이 없습니다.</td></tr>';return;}
+
+  const grouped=(sort==='default');
+  // rowspan 계산 (default 정렬일 때만 병합)
+  let teamSpan={},partSpan={},teacherSpan={};
+  if(grouped){
+    data.forEach(r=>{teamSpan[r.team]=(teamSpan[r.team]||0)+1;
+      partSpan[r.team+'|'+r.part]=(partSpan[r.team+'|'+r.part]||0)+1;
+      teacherSpan[r.team+'|'+r.part+'|'+r.teacher]=(teacherSpan[r.team+'|'+r.part+'|'+r.teacher]||0)+1;});
+  }
+  let seenTeam={},seenPart={},seenTeacher={};
+  data.forEach(r=>{
+    const tr=document.createElement('tr');
+    const gc=GC[r.grade];
+    let html='';
+    if(grouped){
+      if(!seenTeam[r.team]){seenTeam[r.team]=1;html+=`<td class="team-cell" rowspan="${teamSpan[r.team]}" style="background:${gc[1]};color:${gc[2]}">${r.team}</td>`;}
+      const pk=r.team+'|'+r.part;
+      if(!seenPart[pk]){seenPart[pk]=1;html+=`<td class="part-cell" rowspan="${partSpan[pk]}" style="background:${gc[3]};color:${gc[2]}">${r.part}</td>`;}
+      const tk=pk+'|'+r.teacher;
+      if(!seenTeacher[tk]){seenTeacher[tk]=1;html+=`<td class="teacher-cell" rowspan="${teacherSpan[tk]}">${r.teacher}</td>`;}
+    } else {
+      html+=`<td style="color:${gc[2]}">${r.team}</td><td style="color:${gc[2]}">${r.part}</td><td class="teacher-cell">${r.teacher}</td>`;
+    }
+    const pc=pctColor(r.pct);
+    html+=`<td><span class="grade-badge" style="background:${gc[1]};color:${gc[2]}">${r.grade}</span></td>`;
+    html+=`<td>${r.name}</td><td style="color:#888">${r.id}</td>`;
+    html+=`<td class="center">${r.n_done}/8</td>`;
+    html+=`<td class="right"><span class="bar"><i style="width:${Math.min(r.pct,100)}%;background:${pc}"></i></span><span style="color:${pc}">${r.pct}%</span></td>`;
+    tr.innerHTML=html;tb.appendChild(tr);
+  });
+}
+document.getElementById('search').addEventListener('input',render);
+document.getElementById('gradeFilter').addEventListener('change',render);
+document.getElementById('sortSel').addEventListener('change',render);
+render();
+
+const tot=CD.g3.map((v,i)=>v===null?null:v+CD.g4[i]+CD.g5[i]+CD.g6[i]);
+const totLabel={id:'tl',afterDatasetsDraw(c){const{ctx}=c;ctx.save();ctx.font='600 10px sans-serif';ctx.fillStyle='#444441';ctx.textAlign='center';const m=c.getDatasetMeta(3);m.data.forEach((b,i)=>{if(tot[i]&&tot[i]>0)ctx.fillText(tot[i],b.x,b.y-4);});ctx.restore();}};
+const TRIGGERS=[{i:CD.labels.indexOf('6/2'),text:'6/2 독려 대상자 리스트 전달',row:0},{i:CD.labels.indexOf('6/8'),text:'6/8 독려 대상자 리스트 전달',row:0},{i:CD.labels.indexOf('6/10'),text:['6/10 독려 대상자 리스트 전달','컵부여 대상자 리스트 전달'],row:1}];
+const trigPlugin={id:'trig',afterDatasetsDraw(c){const{ctx,chartArea:ca}=c;ctx.save();const gap=4,lh=13,vpad=5,h1=18,top=ca.top+2;TRIGGERS.forEach(t=>{if(t.i<0)return;const lines=Array.isArray(t.text)?t.text:[t.text];const px=c.getDatasetMeta(0).data[t.i].x;ctx.strokeStyle='#993556';ctx.lineWidth=1.5;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(px,ca.top);ctx.lineTo(px,ca.bottom);ctx.stroke();ctx.setLineDash([]);ctx.font='600 10px sans-serif';const tw=Math.max.apply(null,lines.map(l=>ctx.measureText(l).width)),padX=7,bw=tw+padX*2;const bh=lines.length>1?(lines.length*lh+vpad*2):h1;let bx=px-bw/2;if(bx<ca.left+2)bx=ca.left+2;if(bx+bw>ca.right-2)bx=ca.right-2-bw;const by=top+(t.row||0)*(h1+gap),r=5;ctx.fillStyle='#993556';ctx.beginPath();ctx.moveTo(bx+r,by);ctx.arcTo(bx+bw,by,bx+bw,by+bh,r);ctx.arcTo(bx+bw,by+bh,bx,by+bh,r);ctx.arcTo(bx,by+bh,bx,by,r);ctx.arcTo(bx,by,bx+bw,by,r);ctx.closePath();ctx.fill();const cx=Math.max(bx+r,Math.min(px,bx+bw-r));ctx.strokeStyle='#993556';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(cx,by+bh);ctx.lineTo(px,by+bh+5);ctx.stroke();ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';lines.forEach((l,k)=>{const ly=by+bh/2+(k-(lines.length-1)/2)*lh;ctx.fillText(l,bx+bw/2,ly);});});ctx.restore();}};
+new Chart(document.getElementById('trendChart'),{type:'bar',data:{labels:CD.labels,datasets:[
+{label:'초3',data:CD.g3,backgroundColor:'#7F77DD',borderColor:'#fff',borderWidth:1},
+{label:'초4',data:CD.g4,backgroundColor:'#1D9E75',borderColor:'#fff',borderWidth:1},
+{label:'초5',data:CD.g5,backgroundColor:'#BA7517',borderColor:'#fff',borderWidth:1},
+{label:'초6',data:CD.g6,backgroundColor:'#D4537E',borderColor:'#fff',borderWidth:1}]},
+options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:8}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+' '+c.parsed.y+'명'}}},
+scales:{x:{ticks:{font:{size:10},maxRotation:0,autoSkip:false},grid:{display:false},stacked:true},y:{ticks:{font:{size:11}},beginAtZero:true,max:300,stacked:true}}},plugins:[totLabel,trigPlugin]});
+</script>
+</body></html>
